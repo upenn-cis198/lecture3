@@ -1,0 +1,5 @@
+* Lecture 3
+Moves, References, and Lifetimes
+* Moves
+  Move semantics
+  move.rs
