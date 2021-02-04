@@ -1,9 +1,6 @@
-// Use referenes to pass data around without consuming it.
-fn print_vec(vec: &Vec<i32>) {
-    for v in vec {
-        dbg!(v);
-    }
-}
+/*
+    ***** Old code from Fall 2019 *****
+*/
 
 // Use mut reference to change values of pointee.
 fn push_vec(vec: &mut Vec<i32>) {

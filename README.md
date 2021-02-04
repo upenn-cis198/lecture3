@@ -1,6 +1,7 @@
-# Warning: These lecture notes are not yet updated for spring 2021.
+# Lecture 3: Ownership
 
-# lecture3
-Lecture 3: References and Moves
+- Slides for the first part of lecture: `lecture3_motivation_slides.pdf`
 
-See `code/src/*.rs` for files.
+- Source code for the second part of lecture: `src/main.rs`
+
+The other files (`src/old-memory.rs`, `src/old-references.rs`) are from older iterations of the course and can be ignored.

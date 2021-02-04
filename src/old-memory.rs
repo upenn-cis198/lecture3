@@ -1,6 +1,8 @@
-#![allow(dead_code, unused_variables, unused_assignments, unused_mut)]
+/*
+    ***** Old code from Fall 2019 *****
+*/
 
-mod references;
+#![allow(dead_code, unused_variables, unused_assignments, unused_mut)]
 
 // Motivating Question:
 // How does Java/Python handle assingment from some non-trivial data e.g. an object?
