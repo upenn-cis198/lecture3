@@ -153,7 +153,8 @@ fn use_print_vec_4() {
     Example with strings
 
     String: owned, valid UTF8, growable (modifiable) string
-    &str: reference, immutable, view of valid UTF8 string data somewhere in memory
+    &str: reference, immutable, view of valid UTF8 string data somewhere in
+    memory
 
     Q: why is &str a reference and not just a 'str'?
 
@@ -332,7 +333,39 @@ fn cloning_examples() {
     **Important:** when you pass ownership into a function, copying happens
     automatically
 
-    For example, we don't run into any ownership problems with a print_
+    For example, we don't run into any ownership problems with a print_int
+    function like we do with print_vec:
+*/
+
+fn print_ints(x: usize, y: usize) {
+    println!("ints: ({}, {})", x, y);
+}
+
+#[test]
+fn test_print_ints() {
+    let x = 1;
+    let y = 2;
+    print_ints(x, y);
+    // x and y were copied, so the function did not take ownership.
+    // Therefore, we can keep doing stuff with x and y.
+    print_ints(x, x);
+    print_ints(y, y);
+}
+
+// If we wanted to modify x and y, we would still need
+// to write a function which takes a mutable reference, like:
+// fn do_some_modification(x: &mut usize) {
+// }
+
+/*
+    In general, this means that for functions taking integers, you can
+    just accept an integer as argument instead of a reference.
+    This is in general true for "cheaply copiable" types -- besides
+    integers, other Copy types include pairs of ints like (u64, u64).
+
+    Under the hood, references like &str and &usize are also Copy types!
+    That is why they pass to functions so easily without transferring
+    ownership.
 */
 
 /* ========== Interlude ========== */
